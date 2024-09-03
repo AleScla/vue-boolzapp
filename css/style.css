@@ -1,0 +1,5 @@
+body{
+    background: linear-gradient(0deg, hsla(54, 13%, 84%, 1) 85%, hsla(174, 100%, 29%, 1) 85%);
+    width:100%;
+    height:100vh;
+}
