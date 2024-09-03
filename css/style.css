@@ -1,5 +1,59 @@
+:root{
+    --lightgrey:#EAEAEA;
+    --icon-color:#B1B1B1;
+    --bg-notifications:#8EDAFC;
+}
+/* general */
+img{
+    width:100%;
+    
+}
 body{
     background: linear-gradient(0deg, hsla(54, 13%, 84%, 1) 85%, hsla(174, 100%, 29%, 1) 85%);
     width:100%;
     height:100vh;
 }
+.fa-solid{
+    color:var(--icon-color);
+    cursor:pointer;
+}
+.container{
+    height:90vh;
+    margin-top:5vh;
+}
+
+/* HEADER */
+
+.hdr{
+    height:80px;
+    background-color: var(--lightgrey);
+    border: 1px solid grey;
+}
+
+.img-container{
+    width: 60px;
+    height:60px;
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+}
+
+/* SEZIONE NOTIFICATIONS */
+.notifications{
+    background-color:var(--bg-notifications);
+    height:100px;
+}
+.fa-bell-slash{
+    color:var(--bg-notifications);
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+/* MAIN */
+
+
+
+
+
+
