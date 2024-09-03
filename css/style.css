@@ -70,7 +70,6 @@ body{
 
 .single-chat{
     border-bottom:1px solid var(--lightgrey);
-
 }
 
 .active{
@@ -93,6 +92,53 @@ body{
 
 .my-text-bar{
     height: 70px;
+}
+
+.emojis, .microphone{
+    width:15%;
+    height:100%;
+    line-height:70px;
+    text-align:center;
+    cursor:pointer;
+}
+.input-text-container{
+    flex-grow:1;
+    height:100%;
+}
+
+.fa-microphone{
+    color:grey;
+}
+
+.msg-container{
+    width:100%;
+    display:flex;
+}
+
+.message{
+    width:40%;
+    padding:10px;
+    margin:20px;
+    border-radius:10px;
+}
+
+.send{
+    
+    justify-content:flex-end;
+}
+
+.message.bg-received{
+    background-color:white;
+}
+
+.message.bg-send{
+    background-color:#D5F9BA;
+    
+}
+
+.msg-hour{
+    color:rgb(161, 161, 161);
+    font-size:0.8rem;
 }
 
 

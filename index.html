@@ -63,17 +63,20 @@
                         </div><!-- fine row notifiche -->
 
                         <div class="row chatPrev-container align-items-start"><!-- row anteprima chat -->
-                            <div class="col-12 d-flex align-items-center w-100 py-2 single-chat active">
-                                <div class="img-container">
-                                    <img src="img/avatar_1.jpg" alt="avatar_1.jpg">
+                            <div class="col-12 w-100">
+                                <div v-for="contact, index in contacts" class="single-chat d-flex py-2 align-items-center">
+                                    <div class="img-container">
+                                        <img :src="contact.avatar" alt="avatar.jpg">
+                                    </div>
+                                    <div class="user-info ms-2">
+                                        <h5 class="m-0">{{contact.name}}</h5>
+                                        <p v-if="contact.messages.length > 0"class="m-0 last-msg">{{contact.messages[contact.messages.length - 1].message}}</p>
+                                    </div>
+                                    <div class="hour ms-auto text-end align-self-end">
+                                        {{contact.messages[contact.messages.length - 1].hour}}
+                                    </div>
                                 </div>
-                                <div class="user-info ms-2">
-                                    <h5 class="m-0">Michele</h5>
-                                    <p class="m-0 last-msg">Ultimo messaggio inviato</p>
-                                </div>
-                                <div class="hour ms-auto align-self-start">
-                                    12:00
-                                </div>
+                                
                             </div>
                         </div><!-- fine row anteprima chat -->
                     </div><!-- ASIDE END -->
@@ -96,12 +99,36 @@
                         </header>
                         <div class="row bg-custom">
                             <div class="col">
-                                
+                                <div class="msg-container">
+                                    <div class="message bg-received">
+                                        <p class="m-0">
+                                            
+                                        </p>
+                                        <div class="msg-hour">
+                                            12:20
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="msg-container send">
+                                    <div class="message bg-send">
+                                        <p class="m-0">messaggio</p>
+                                        <div class="msg-hour text-end">
+                                            14:20
+                                        </div>
+                                    </div>
+                                    
+                                </div>
                             </div>
                         </div>
-                        <div class="my-text-bar w-100">
+                        <div class="my-text-bar w-100 d-flex align-items-center">
                             <div class="emojis">
-                                
+                                <i class="fa-regular fa-face-smile fa-xl"></i>
+                            </div>
+                            <div class="input-text-container d-flex align-items-center">
+                                <input class="form-control me-2" type="text" placeholder="Scrivi un messaggio">
+                            </div>
+                            <div class="microphone">
+                                <i class="fa-solid fa-microphone fa-xl"></i>
                             </div>
                         </div>
                     </div><!-- CHAT SIDE -->
