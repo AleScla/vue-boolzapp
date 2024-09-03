@@ -20,17 +20,17 @@
     <body>
         <!-- main -->
         <main>
-            <div class="container">
-                <div class="row">
-                    <div class="col-4 hdr"><!-- ASIDE -->
+            <div class="container" id="app">
+                <div class="row h-100">
+                    <div class="col-4 border grey-bg"><!-- ASIDE -->
                         <!-- INIZIO HEADER -->
-                        <header class="d-flex align-items-center w-100 h-100 justify-content-between"> 
-                            <div class="my-info d-flex align-items-center w-50 h-100">
+                        <header class="d-flex align-items-center w-100 justify-content-between"> 
+                            <div class="my-info d-flex align-items-center w-50">
                                 <div class="img-container me-1">
-                                    <img src="img/my_avatar.jpg" alt="">
+                                    <img src="img/my_avatar.jpg" alt="my_avatar.jpg">
                                 </div>
                                 <div class="propic-name">
-                                    Alessandro
+                                    <h5>Alessandro</h5>
                                 </div>
                             </div>
                             <div class="utilities d-flex align-items-center w-50 h-100 justify-content-end">
@@ -54,13 +54,57 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- fine row notifiche --> 
-                    </div><!-- ASIDE END -->
-                    <div class="col-8 hdr">
-                        <header>
+                            <div class="my-nav">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass fa-l"></i></span>
+                                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                                </div>
+                            </div>
+                        </div><!-- fine row notifiche -->
 
+                        <div class="row chatPrev-container align-items-start"><!-- row anteprima chat -->
+                            <div class="col-12 d-flex align-items-center w-100 py-2 single-chat active">
+                                <div class="img-container">
+                                    <img src="img/avatar_1.jpg" alt="avatar_1.jpg">
+                                </div>
+                                <div class="user-info ms-2">
+                                    <h5 class="m-0">Michele</h5>
+                                    <p class="m-0 last-msg">Ultimo messaggio inviato</p>
+                                </div>
+                                <div class="hour ms-auto align-self-start">
+                                    12:00
+                                </div>
+                            </div>
+                        </div><!-- fine row anteprima chat -->
+                    </div><!-- ASIDE END -->
+                    
+                    <div class="col-8 grey-bg chat-container"><!-- CHAT SIDE -->
+                        <header class="d-flex align-items-center w-100 justify-content-between "> 
+                            <div class="my-info d-flex align-items-center w-50">
+                                <div class="img-container me-1">
+                                    <img src="img/avatar_1.jpg" alt="avatar_1.jpg">
+                                </div>
+                                <div class="propic-name">
+                                    <h5>Michele</h5>
+                                </div>
+                            </div>
+                            <div class="utilities d-flex align-items-center w-50 h-100 justify-content-end">
+                                <i class="fa-solid fa-magnifying-glass me-3 fa-xl"></i>
+                                <i class="fa-solid fa-paperclip fa-xl me-3"></i>
+                                <i class="fa-solid fa-ellipsis-vertical fa-xl me-3"></i>
+                            </div>
                         </header>
-                    </div>
+                        <div class="row bg-custom">
+                            <div class="col">
+                                
+                            </div>
+                        </div>
+                        <div class="my-text-bar w-100">
+                            <div class="emojis">
+                                
+                            </div>
+                        </div>
+                    </div><!-- CHAT SIDE -->
                 </div>
             </div>
         </main>

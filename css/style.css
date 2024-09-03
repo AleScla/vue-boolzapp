@@ -12,6 +12,7 @@ body{
     background: linear-gradient(0deg, hsla(54, 13%, 84%, 1) 85%, hsla(174, 100%, 29%, 1) 85%);
     width:100%;
     height:100vh;
+    overflow:hidden;
 }
 .fa-solid{
     color:var(--icon-color);
@@ -24,10 +25,12 @@ body{
 
 /* HEADER */
 
-.hdr{
-    height:80px;
-    background-color: var(--lightgrey);
+/* .border{
     border: 1px solid grey;
+} */
+.grey-bg{
+    background-color: var(--lightgrey);
+    
 }
 
 .img-container{
@@ -36,6 +39,9 @@ body{
     border-radius:50%;
     overflow:hidden;
     position:relative;
+}
+.my-info{
+    height:80px;
 }
 
 /* SEZIONE NOTIFICATIONS */
@@ -50,9 +56,44 @@ body{
     left:50%;
     transform: translate(-50%, -50%);
 }
-/* MAIN */
 
+/* sezione anteprime chat */
+.chatPrev-container{
+    height:calc(100% - 240px);
+    background-color:white;
+}
 
+.my-nav{
+    padding: 10px;
+    background-color:white;
+}
+
+.single-chat{
+    border-bottom:1px solid var(--lightgrey);
+
+}
+
+.active{
+    background-color:var(--lightgrey)
+}
+
+.last-msg{
+    color:var(--icon-color)
+}
+/* sezione chats */
+
+.chat-container{
+    height:90vh;
+}
+
+.bg-custom{
+    background-image: url('../img/mine.jpg');
+    height:calc(100% - 150px);
+}
+
+.my-text-bar{
+    height: 70px;
+}
 
 
 
