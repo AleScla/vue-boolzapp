@@ -62,21 +62,20 @@
                             </div>
                         </div><!-- fine row notifiche -->
 
-                        <div class="row chatPrev-container align-items-start"><!-- row anteprima chat -->
-                            <div class="col-12 w-100">
-                                <div v-for="contact, index in contacts" class="single-chat d-flex py-2 align-items-center">
+                        <div class="row chatPrev-container align-items-start "><!-- row anteprima chat -->
+                            <div class="col-12 w-100 p-0">
+                                <div @click="active = index" v-for="contact, index in contacts" class="single-chat d-flex p-2 align-items-center" :class="{'active' : active == index}" >
                                     <div class="img-container">
                                         <img :src="contact.avatar" alt="avatar.jpg">
                                     </div>
                                     <div class="user-info ms-2">
                                         <h5 class="m-0">{{contact.name}}</h5>
-                                        <p v-if="contact.messages.length > 0"class="m-0 last-msg">{{contact.messages[contact.messages.length - 1].message}}</p>
+                                        <p v-if="contact.messages.length > 0" class="m-0 last-msg">{{contact.messages[contact.messages.length - 1].message}}</p>
                                     </div>
                                     <div class="hour ms-auto text-end align-self-end">
                                         {{contact.messages[contact.messages.length - 1].hour}}
                                     </div>
                                 </div>
-                                
                             </div>
                         </div><!-- fine row anteprima chat -->
                     </div><!-- ASIDE END -->
@@ -85,10 +84,15 @@
                         <header class="d-flex align-items-center w-100 justify-content-between "> 
                             <div class="my-info d-flex align-items-center w-50">
                                 <div class="img-container me-1">
-                                    <img src="img/avatar_1.jpg" alt="avatar_1.jpg">
+                                    <img :src="contacts[active].avatar" alt="avatar.jpg">
                                 </div>
                                 <div class="propic-name">
-                                    <h5>Michele</h5>
+                                    <h5 class="m-0">{{contacts[active].name}}</h5>
+                                    <p class="m-0">
+                                        Ultimo accesso {{contacts[active].messages[contacts[active].messages.length - 1].date}} 
+                                        alle 
+                                        {{contacts[active].messages[contacts[active].messages.length - 1].hour}}
+                                    </p>
                                 </div>
                             </div>
                             <div class="utilities d-flex align-items-center w-50 h-100 justify-content-end">
@@ -97,29 +101,23 @@
                                 <i class="fa-solid fa-ellipsis-vertical fa-xl me-3"></i>
                             </div>
                         </header>
+                        <!-- corpo chat -->
                         <div class="row bg-custom">
                             <div class="col">
-                                <div class="msg-container">
-                                    <div class="message bg-received">
+                                <div class="msg-container" v-for="msg, index in contacts[active].messages" :class=" msg.status == 'received' ? '' : 'send'">
+                                    <div class="message" :class=" msg.status == 'received' ? 'bg-received' : 'bg-send'">
                                         <p class="m-0">
-                                            
+                                            {{msg.message}}
                                         </p>
-                                        <div class="msg-hour">
-                                            12:20
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="msg-container send">
-                                    <div class="message bg-send">
-                                        <p class="m-0">messaggio</p>
                                         <div class="msg-hour text-end">
-                                            14:20
+                                            {{msg.hour}}
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
                         </div>
+                        <!-- fine corpo chat -->
+                        <!-- text bar -->
                         <div class="my-text-bar w-100 d-flex align-items-center">
                             <div class="emojis">
                                 <i class="fa-regular fa-face-smile fa-xl"></i>
@@ -131,6 +129,7 @@
                                 <i class="fa-solid fa-microphone fa-xl"></i>
                             </div>
                         </div>
+                        <!-- fine text bar -->
                     </div><!-- CHAT SIDE -->
                 </div>
             </div>
