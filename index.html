@@ -22,11 +22,11 @@
         <main>
             <div class="container" id="app">
                 <div class="row h-100">
-                    <div class="col-4 border grey-bg"><!-- ASIDE -->
+                    <div class="col-4 border grey-bg p-0 my-overflow"><!-- ASIDE -->
                         <!-- INIZIO HEADER -->
                         <header class="d-flex align-items-center w-100 justify-content-between"> 
                             <div class="my-info d-flex align-items-center w-50">
-                                <div class="img-container me-1">
+                                <div class="img-container mx-2">
                                     <img src="img/my_avatar.jpg" alt="my_avatar.jpg">
                                 </div>
                                 <div class="propic-name">
@@ -40,8 +40,8 @@
                             </div>
                         </header>
                         <!-- FINE HEADER -->
-                        <div class="row"><!-- row notifiche -->
-                            <div class="col notifications align-items-center d-flex">
+                        <div><!-- row notifiche -->
+                            <div class="notifications align-items-center d-flex px-2">
                                 <div class="img-cointainer me-2">
                                     <div class="img-container bg-white">
                                         <i class="fa-solid fa-bell-slash fa-xl"></i>
@@ -62,8 +62,8 @@
                             </div>
                         </div><!-- fine row notifiche -->
 
-                        <div class="row chatPrev-container align-items-start "><!-- row anteprima chat -->
-                            <div class="col-12 w-100 p-0">
+                        <div class="chatPrev-container align-items-start my-overflow"><!-- row anteprima chat -->
+                            <div class="w-100 p-0 ">
                                 <div @click="active = index" v-for="contact, index in contacts" class="single-chat d-flex p-2 align-items-center" :class="{'active' : active == index}" >
                                     <div class="img-container">
                                         <img :src="contact.avatar" alt="avatar.jpg">

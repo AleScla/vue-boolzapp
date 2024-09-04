@@ -61,6 +61,7 @@ body{
 .chatPrev-container{
     height:calc(100% - 240px);
     background-color:white;
+    
 }
 
 .my-nav{
@@ -70,6 +71,11 @@ body{
 
 .single-chat{
     border-bottom:1px solid var(--lightgrey);
+    
+}
+.my-overflow{
+    overflow-y:auto;
+    max-height:100%;
 }
 
 .active{
