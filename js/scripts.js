@@ -188,6 +188,31 @@ createApp({
             }
         ],
         active:0,
+        newMessage:'',
+        searchValue:'',
     }
-  }
+  },
+  methods:{
+    addMessage(i){
+        if(this.newMessage.trim() !== ''){
+            this.contacts[i].messages.push({
+            date: '10/01/2020',
+            hour: '16:15',
+            message: this.newMessage,
+            status: 'sent'
+          },
+        {
+            date: '10/01/2020',
+            hour: '16:16',
+            message: 'ok',
+            status: 'received'
+        })  
+        }
+        this.newMessage = '';
+    }
+  } 
 }).mount('#app')
+
+
+
+// :class="contacts.name.!includes(searchValue) ? 'd-none' : '';"

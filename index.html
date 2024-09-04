@@ -57,14 +57,14 @@
                             <div class="my-nav">
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass fa-l"></i></span>
-                                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                                    <input v-model="searchValue" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                                 </div>
                             </div>
                         </div><!-- fine row notifiche -->
 
                         <div class="chatPrev-container align-items-start my-overflow"><!-- row anteprima chat -->
-                            <div class="w-100 p-0 ">
-                                <div @click="active = index" v-for="contact, index in contacts" class="single-chat d-flex p-2 align-items-center" :class="{'active' : active == index}" >
+                            <div class="w-100 p-0" v-for="contact, index in contacts">
+                                <div @click="active = index" v-if="(contact.name).toLowerCase().includes(searchValue.toLowerCase())"  class="single-chat d-flex p-2 align-items-center" :class="{'active' : active == index}">
                                     <div class="img-container">
                                         <img :src="contact.avatar" alt="avatar.jpg">
                                     </div>
@@ -123,7 +123,7 @@
                                 <i class="fa-regular fa-face-smile fa-xl"></i>
                             </div>
                             <div class="input-text-container d-flex align-items-center">
-                                <input class="form-control me-2" type="text" placeholder="Scrivi un messaggio">
+                                <input @keyup.enter="addMessage(active)" v-model="newMessage" class="form-control me-2" type="text" placeholder="Scrivi un messaggio">
                             </div>
                             <div class="microphone">
                                 <i class="fa-solid fa-microphone fa-xl"></i>
