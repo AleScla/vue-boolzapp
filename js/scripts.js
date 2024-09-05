@@ -175,7 +175,7 @@ createApp({
                     {
                         date: '10/01/2020',
                         hour:'15:50',
-                        message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                        message: 'Si, l\'ho già mangiata ieri, ma la mangio di nuovo volentieri!',
                         status: 'sent'
                     },
                     {
@@ -200,17 +200,20 @@ createApp({
             hour: '16:15',
             message: this.newMessage,
             status: 'sent'
-          },
-        {
-            date: '10/01/2020',
-            hour: '16:16',
-            message: 'ok',
-            status: 'received'
-        })  
-        }
+          }
+        ),
         this.newMessage = '';
+
+        setTimeout(() =>{
+            this.contacts[i].messages.push({
+                date: '10/01/2020',
+                hour: '16:16',
+                message: 'OK',
+                status: 'received'
+            });
+        }, 1500)
     }
-  } 
+  }} 
 }).mount('#app')
 
 
