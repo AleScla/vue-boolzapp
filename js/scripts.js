@@ -193,11 +193,29 @@ createApp({
     }
   },
   methods:{
+    // funzione per prendere la data
+    getDate(){
+        const time = new Date();
+        let fullDate = '';
+        fullDate += time.getDate().toString().padStart(2, '0') + 
+        '/' + (time.getMonth() + 1).toString().padStart(2, '0') + 
+        '/' + time.getFullYear();
+        return fullDate;
+    },
+    // funzione per prendere l'ora
+    getHour(){
+        const time = new Date();
+        let hour = '';
+        hour += time.getHours().toString().padStart(2, '0') + ':' 
+        + time.getMinutes().toString().padStart(2, '0');
+        return hour;
+    },
+    // funzione per inserire un nuovo messaggio, avendo una risposta dall' "utente" dopo 1s e mezzo
     addMessage(i){
         if(this.newMessage.trim() !== ''){
             this.contacts[i].messages.push({
-            date: '10/01/2020',
-            hour: '16:15',
+            date: this.getDate(),
+            hour: this.getHour(),
             message: this.newMessage,
             status: 'sent'
           }
@@ -206,8 +224,8 @@ createApp({
 
         setTimeout(() =>{
             this.contacts[i].messages.push({
-                date: '10/01/2020',
-                hour: '16:16',
+                date: this.getDate(),
+                hour: this.getHour(),
                 message: 'OK',
                 status: 'received'
             });
@@ -216,6 +234,3 @@ createApp({
   }} 
 }).mount('#app')
 
-
-
-// :class="contacts.name.!includes(searchValue) ? 'd-none' : '';"
